@@ -9,7 +9,7 @@ import dagger.multibindings.IntoMap
 /**
  * View model builder for activity view-models
  */
-@Module
+@Module(includes = [ComponentProvider::class])
 interface ActivityViewModelBuilder {
     @Binds
     @IntoMap

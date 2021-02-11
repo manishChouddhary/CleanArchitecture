@@ -1,5 +1,9 @@
 package com.rxsense.cleanarchitecture.dpendencyinjection
 
+import android.content.Context
+import coil.ImageLoader
+import coil.request.CachePolicy
+import coil.util.CoilUtils
 import com.rxsense.cleanarchitecture.BuildConfig
 import com.rxsense.cleanarchitecture.network.RequestInterceptor
 import com.squareup.moshi.Moshi
@@ -26,7 +30,24 @@ const val READ_WRITE_TIMEOUT: Long = 120
         ActivityBuilder::class,
         ActivityViewModelBuilder::class]
 )
-class DIModule {
+class DIModule(val context: Context) {
+    @Provides
+    @Singleton
+    fun provideImageLoader(): ImageLoader {
+        return ImageLoader.Builder(context)
+            .okHttpClient {
+                OkHttpClient.Builder()
+                    .cache(CoilUtils.createDefaultCache(context))
+                    .build()
+            }
+            .diskCachePolicy(CachePolicy.ENABLED)
+            .bitmapPoolingEnabled(true)
+            .memoryCachePolicy(CachePolicy.ENABLED)
+            .availableMemoryPercentage(0.25)
+            .crossfade(true)
+            .build()
+    }
+
     @Provides
     @Singleton
     fun provideMemberApiRetrofitClient(client: OkHttpClient): Retrofit {

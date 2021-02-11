@@ -1,7 +1,6 @@
 package com.rxsense.cleanarchitecture.datacomponent
 
 import com.rxsense.cleanarchitecture.commoncomponents.Resource
-import com.rxsense.cleanarchitecture.datacomponent.model.Post
 import com.rxsense.cleanarchitecture.datacomponent.model.PostListResponse
 import com.rxsense.cleanarchitecture.datacomponent.networkservice.IService
 import com.rxsense.cleanarchitecture.domain.IRepository

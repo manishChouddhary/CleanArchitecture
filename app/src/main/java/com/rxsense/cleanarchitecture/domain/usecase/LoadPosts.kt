@@ -1,10 +1,13 @@
 package com.rxsense.cleanarchitecture.domain.usecase
 
 import com.rxsense.cleanarchitecture.commoncomponents.Resource
-import com.rxsense.cleanarchitecture.datacomponent.model.Post
+import com.rxsense.cleanarchitecture.commoncomponents.formattedDate
+import com.rxsense.cleanarchitecture.datacomponent.model.NetworkPost
 import com.rxsense.cleanarchitecture.datacomponent.model.PostListResponse
 import com.rxsense.cleanarchitecture.domain.IRepository
+import com.rxsense.cleanarchitecture.domain.models.Post
 import io.reactivex.Single
+import java.util.*
 import javax.inject.Inject
 
 /**
@@ -27,10 +30,16 @@ class LoadPosts @Inject constructor(private val repository: IRepository) {
         }
     }
 
-    private fun makePostList(data: List<Post>?): Resource<List<Post>> {
+    private fun makePostList(data: List<NetworkPost>?): Resource<List<Post>> {
         if(data==null){
             return Resource.Error("")
         }
-        return Resource.Success(data)
+        return Resource.Success(data.map { Post(
+            "${it.owner.title.capitalize(Locale.ROOT)} ${it.owner.firstName} ${it.owner.lastName}",
+            it.text,
+            it.publishDate.formattedDate(),
+            it.image,
+            it.likes
+        ) })
     }
 }

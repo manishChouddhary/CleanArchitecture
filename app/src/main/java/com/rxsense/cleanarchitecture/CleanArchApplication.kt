@@ -27,7 +27,7 @@ class CleanArchApplication : Application(), HasAndroidInjector {
     override fun onCreate() {
         super.onCreate()
         diComponent = DaggerDIComponent.builder()
-            .appModule(DIModule())
+            .appModule(DIModule(this))
             .application(applicationContext)
             .build()
         diComponent.inject(this)

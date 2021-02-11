@@ -9,7 +9,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class PostListResponse(
     @Json(name = "data")
-    val data: List<Post>?,
+    val data: List<NetworkPost>?,
     @Json(name = "limit")
     val limit: Int?,
     @Json(name = "offset")

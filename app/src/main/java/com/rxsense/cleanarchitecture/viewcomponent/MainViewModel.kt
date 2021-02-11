@@ -3,7 +3,7 @@ package com.rxsense.cleanarchitecture.viewcomponent
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.rxsense.cleanarchitecture.commoncomponents.Resource
-import com.rxsense.cleanarchitecture.datacomponent.model.Post
+import com.rxsense.cleanarchitecture.domain.models.Post
 import com.rxsense.cleanarchitecture.domain.usecase.LoadPosts
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable

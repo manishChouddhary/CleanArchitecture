@@ -6,7 +6,8 @@ import retrofit2.http.GET
 import retrofit2.http.QueryMap
 
 /**
- *
+ * Retrofit service for api call representation consumes the model
+ * from data-component layer
  */
 interface IService {
     @GET("/data/api/post")

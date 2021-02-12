@@ -11,6 +11,9 @@ import com.rxsense.cleanarchitecture.databinding.ActivityMainBinding
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
+/**
+ * Main view for the application
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var adapter: PostsAdapter

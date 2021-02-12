@@ -9,7 +9,8 @@ import dagger.Provides
 import retrofit2.Retrofit
 
 /**
- *
+ * Module to provide feature level dependencies can be different
+ * for the every feature.
  */
 @Module(includes = [IComponentProvider::class])
 class ComponentProvider {

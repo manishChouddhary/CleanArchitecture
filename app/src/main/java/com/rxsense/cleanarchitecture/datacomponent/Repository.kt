@@ -9,7 +9,8 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 /**
- *
+ * Responsible for data fetching and
+ * implementation of domain layer abstraction
  */
 class Repository @Inject constructor(private val service: IService) : IRepository {
     override fun getPosts(): Single<Resource<PostListResponse>> {

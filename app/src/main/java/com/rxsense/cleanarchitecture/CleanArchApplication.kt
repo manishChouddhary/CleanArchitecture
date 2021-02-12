@@ -10,7 +10,7 @@ import dagger.android.HasAndroidInjector
 import javax.inject.Inject
 
 /**
- *
+ * Application class for application level initializations
  */
 class CleanArchApplication : Application(), HasAndroidInjector {
     companion object {

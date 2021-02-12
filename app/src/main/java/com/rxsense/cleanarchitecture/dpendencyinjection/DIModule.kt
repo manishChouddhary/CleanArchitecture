@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 /**
- *
+ * Module to provide application level dependencies
  */
 const val CONNECTION_TIMEOUT: Long = 60
 const val READ_WRITE_TIMEOUT: Long = 120

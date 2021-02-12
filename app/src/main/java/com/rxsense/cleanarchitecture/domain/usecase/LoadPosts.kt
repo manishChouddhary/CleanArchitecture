@@ -11,7 +11,8 @@ import java.util.*
 import javax.inject.Inject
 
 /**
- *
+ * Responsible for loading post, single responsibility class
+ * exposed to view model present in view-component layer by di
  */
 class LoadPosts @Inject constructor(private val repository: IRepository) {
     fun getPosts(): Single<Resource<List<Post>>> {

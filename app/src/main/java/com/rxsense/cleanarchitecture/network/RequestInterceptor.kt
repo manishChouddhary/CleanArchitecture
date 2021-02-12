@@ -4,6 +4,9 @@ import com.rxsense.cleanarchitecture.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
 
+/**
+ * Interceptor for adding common headers
+ */
 class RequestInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val requestBuilder = chain.request().newBuilder()

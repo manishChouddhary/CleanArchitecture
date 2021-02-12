@@ -11,6 +11,9 @@ import com.rxsense.cleanarchitecture.R
 import com.rxsense.cleanarchitecture.databinding.ItemPostBinding
 import com.rxsense.cleanarchitecture.domain.models.Post
 
+/**
+ * Post Adaptor with data binding
+ */
 class PostsAdapter(val imageLoader: ImageLoader) : RecyclerView.Adapter<PostsAdapter.ViewHolder>() {
     private val list by lazy { ArrayList<Post>() }
 

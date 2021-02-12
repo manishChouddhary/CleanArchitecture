@@ -10,7 +10,7 @@ import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 
 /**
- *
+ * View model for main activity and attached to its lifecycle
  */
 class MainViewModel @Inject constructor(private val postsUseCase: LoadPosts) : ViewModel() {
     private val compositeDisposable by lazy { CompositeDisposable() }
